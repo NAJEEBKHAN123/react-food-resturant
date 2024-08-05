@@ -1,0 +1,45 @@
+.maincontanier {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    padding: 16px;
+    margin-left: 70px;
+    margin-right: 70px;
+  }
+
+  .card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  .card img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .card h3 {
+    margin: 10px 0;
+    font-size: 1.2em;
+  }
+   .card:hover {
+    transform: scale(1.05); 
+  }
+  .main h1{
+    text-align: center;
+    margin: 50px;
+  }
+
+  @media (max-width: 630px) {
+    .mainContainer {
+      justify-content: center; /* Center cards */
+    }
+  
+    .card {
+      width: 100%; /* Full width of the container on small screens */
+      max-width: 300px; /* Maximum width of the card */
+    }
+  }
+  

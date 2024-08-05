@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    position: relative;
+    width: 100%;
+    height: 45vh;
+}
+.headerInput{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 8px;
+    transform:translate(-50%, -50%);  
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+   justify-content: center;
+   gap: 15px;
+} 
+.headerInput input{
+    width: 200px;
+    padding: 8px;
+    border-radius: 3px;
+} 
+.headerInput button{ 
+    padding: 8px 16px;
+    background-color: rgb(192, 41, 41);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.img{
+   width: 100%;
+   height: 45vh;
+   object-fit: cover;
+}
+
