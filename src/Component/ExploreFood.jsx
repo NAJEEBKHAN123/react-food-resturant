@@ -1,9 +1,12 @@
- import '../App.css';
+ import { useContext } from 'react';
+import '../App.css';
  import styles from '../Component/Explore.module.css'
+import { userContext } from '../App';
  
- function ExploreFood({ cardData}) {
+ function ExploreFood() {
+  const {cardData} = useContext(userContext);
+  console.log(cardData)
   return (
-   
     <main className={styles.main}>
     <h1>Explore Food</h1>
   <div className={styles.maincontanier}>

@@ -1,9 +1,16 @@
+import { createContext } from 'react'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './Component/Header'
 import Navbar from './Component/Navbar'
 import './App.css'
 import ExploreFood from './Component/ExploreFood'
 import FoodMenu from './Component/FoodMenu'
 import Footer from './Component/Footer'
+import Home from './Component/Home'
+import About from './Component/About'
+
+
+export const userContext = createContext();
 
 function App() {
 
@@ -33,35 +40,35 @@ function App() {
       desc:"The Chapli Kebab comes from central Asia",
     },
     {
-      id: 1,
+      id: 2,
       Name: "Buddha Bowl",
       imgUrl:"https://media.istockphoto.com/id/1295633127/photo/grilled-chicken-meat-and-fresh-vegetable-salad-of-tomato-avocado-lettuce-and-spinach-healthy.webp?b=1&s=170667a&w=0&k=20&c=28UZDQVkSbPg3-SX4s0jWARo0F7j2EC8zrvQHuh8WnU=",
       Price: 6.09 ,
       desc:"Grilled chicken meat and fresh vegetable salad of tomato",
     },
     {
-      id: 1,
+      id: 3,
       Name: "Delicious meal",
       imgUrl:"https://media.istockphoto.com/id/1165399909/photo/delicious-meal-on-a-black-plate-top-view-copy-space.webp?b=1&s=170667a&w=0&k=20&c=VNOdVyszWf-PbZa-IxolcYq752TRkCkeUdpzJ2Ghf7M=",
       Price: 2.49 ,
       desc:"Delicious meal on a black plate, top view,",
     },
     {
-      id: 1,
+      id: 4,
       Name: "Rice With bread",
       imgUrl:"https://media.istockphoto.com/id/614313140/photo/soft-beef-tacos-with-fries.webp?b=1&s=170667a&w=0&k=20&c=cLe3RgvsdwBnzxsp6QOsZfC9w-rTlgiW1l5QArV_NrY=",
       Price: 4.48 ,
       desc:"usually rice and bread come from central asia",
     },
     {
-      id: 1,
+      id: 5,
       Name: "Vegetable",
       imgUrl:"https://media.istockphoto.com/id/1477430966/photo/woman-preparing-quinoa-vegetable-mix-cooked-in-a-frying-pan.webp?b=1&s=170667a&w=0&k=20&c=7aQUWGChdcGumHvlxkJZ2H_U_qeZ8XJIAIBYwsMebps=",
       Price: 7.31 ,
       desc:"chef cooking",
     },
     {
-      id: 1,
+      id: 6,
       Name: "Pizza",
       imgUrl:"https://media.istockphoto.com/id/943449226/photo/concept-promotional-flyer-and-poster-for-restaurants-or-pizzerias-template-with-delicious.webp?b=1&s=170667a&w=0&k=20&c=-bFnLcL3QsAtomAVINVOHZDSaWLNoO_WUROXVuQa4GU=",
       Price: 4.01 ,
@@ -96,15 +103,26 @@ function App() {
     },
 
   ];
+  
+  
 
   return (
-   
       <>
+      <Router>
+      <userContext.Provider value={{cardData, foodData, socialIcons}}>
       <Navbar/>
+      {/* <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/about' element={<About/>}/>
+       </Routes> */}
       <Header/>
-      <ExploreFood cardData={cardData}/>
-      <FoodMenu foodData={foodData}/>
-      <Footer socialIcons={socialIcons}/>
+      <ExploreFood/>
+      <FoodMenu />
+      <Footer/>
+      </userContext.Provider>
+     
+      </Router>
+      
     </>
   )
 }

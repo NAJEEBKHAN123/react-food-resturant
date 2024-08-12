@@ -1,6 +1,9 @@
+import { useContext } from 'react';
 import styles from '../Component/Footer.module.css'
+import { userContext } from '../App';
 
-function Footer({ socialIcons }) {
+function Footer() {
+  const {socialIcons} = useContext(userContext)
   return (
     <footer>
       <div className={styles.maincontainerr}>
